@@ -26,6 +26,16 @@ class ProfileForm(forms.ModelForm):
         model = Profile
         fields = ['avatar']
 
+    def clean_avatar(self):
+
+        avatar = self.cleaned_data.get('avatar', False)
+        if avatar:
+            if avatar.__size > 1024*1024:
+                raise validators.ValidationError('Avatar is Too Large! (>1mb)')
+            return avatar
+
+
+
 
 class UserLoginForm(forms.Form):
 

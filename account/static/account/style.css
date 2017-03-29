@@ -24,3 +24,8 @@ body{
 #panel_body_inside{
     background: gainsboro;
 }
+
+#avatar{
+    width: 50px;
+    height: 50px;
+}
