@@ -3,6 +3,7 @@ from django import forms
 from .models import Profile
 from django.core import validators
 from django.forms import ModelForm
+import os
 
 class UserRegistrationForm(forms.ModelForm):
     password = forms.CharField(widget=forms.PasswordInput)

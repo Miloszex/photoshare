@@ -4,7 +4,14 @@
 {% block pageContent %}
     <form action="." method="post" class="form-horizontal" enctype="multipart/form-data">
     {% csrf_token %}
-    {{ form.as_p }}
+        {% if request.user.profile.avatar %}
+            {% for field in form %}
+                {% with request.user.profile.avatar as avatar %}
+                    <b><u>Current: {{ avatar }}</u></b> <br>
+                    {{ field.label_tag }} {{ field }}
+                {% endwith %}
+            {% endfor %}
+        {% endif %}
     <input type="submit" class="btn btn-primary" value="Register">
     </form>
 {% endblock %}
