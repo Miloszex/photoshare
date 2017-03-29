@@ -5,9 +5,9 @@ from django.contrib.auth import authenticate, logout
 from django.contrib.auth import login as auth_login
 from django.contrib.auth.decorators import login_required
 
-# def index(request):
-#
-#     return render(request, 'account/index.html')
+def index(request):
+
+    return render(request, 'account/index.html')
 
 def register(request):
 
