@@ -1,6 +1,6 @@
 from django.contrib.auth.models import User
 from django import forms
-#from .models import ExtendedUser
+from .models import Profile
 from django.core import validators
 from django.forms import ModelForm
 
@@ -18,6 +18,13 @@ class UserRegistrationForm(forms.ModelForm):
             raise validators.ValidationError('Passwords are not the same!')
         #return self.cleaned_data['repeat_password']
         return False
+
+
+class ProfileForm(forms.ModelForm):
+
+    class Meta:
+        model = Profile
+        fields = ['avatar']
 
 
 class UserLoginForm(forms.Form):

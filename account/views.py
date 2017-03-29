@@ -1,5 +1,6 @@
-from django.shortcuts import render
-from .forms import UserRegistrationForm, UserLoginForm
+from django.shortcuts import render, redirect
+from .forms import UserRegistrationForm, UserLoginForm, ProfileForm
+from .models import Profile
 from django.contrib.auth import authenticate, logout
 from django.contrib.auth import login as auth_login
 from django.contrib.auth.decorators import login_required
@@ -12,13 +13,29 @@ def register(request):
             user = form.save(commit=False)
             user.set_password(form.cleaned_data['password'])
             user.save()
+            Profile.objects.create(user=user)
 
-            return render(request,'account/register_success.html', {'message': 'Success!'})
+            auth_login(request, user)
+
+            return redirect('/account/profile/')
 
     else:
         form = UserRegistrationForm()
 
     return render(request, 'account/register.html', {'form': form})
+
+@login_required(login_url='account/login/')
+def profile(request):
+
+    if request.method == 'POST':
+        form = ProfileForm(request.POST, request.FILES, instance=request.user.profile)
+        if form.is_valid():
+            form.save()
+            return render(request, 'account/upload_success.html', {'message': 'Upload Success!'})
+    else:
+        form = ProfileForm()
+
+    return render(request, 'account/upload.html', {'form': form})
 
 def login(request):
 
@@ -31,6 +48,7 @@ def login(request):
         if user is not None:
             if user.is_active:
                 auth_login(request,user)
+
                 return render(request, 'account/login_success.html', {'user': user})
     else:
         form = UserLoginForm()
