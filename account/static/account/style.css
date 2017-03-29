@@ -1,0 +1,26 @@
+body{
+    background: white url("images/background.png")
+}
+
+#bar{
+    background: white url("images/background.png");
+}
+
+#login{
+    width: 400px;
+    text-align: center;
+    margin-left: 35%;
+    margin-right: 35%;
+    margin-top: 10%;
+}
+
+#register{
+    width: 600px;
+    margin-right: 25%;
+    margin-left: 25%;
+    text-align: center;
+}
+
+#panel_body_inside{
+    background: gainsboro;
+}
