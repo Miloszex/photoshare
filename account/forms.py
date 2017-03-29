@@ -18,3 +18,9 @@ class UserRegistrationForm(forms.ModelForm):
             raise validators.ValidationError('Passwords are not the same!')
         #return self.cleaned_data['repeat_password']
         return False
+
+
+class UserLoginForm(forms.Form):
+
+    username = forms.CharField(min_length=1)
+    password = forms.CharField(widget=forms.PasswordInput, min_length=1)
