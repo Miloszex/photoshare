@@ -23,7 +23,10 @@
 
     <form action="{% url 'delete_avatar' %} " method="post">
     {% csrf_token %}
+    {% if request.user.profile.avatar %}
         <img src="/media/{{ request.user.profile.avatar }}" id="avatar">
-    <button type="submit" class="btn-danger">Delete!</button>
+        <button type="submit" class="btn-danger">Delete!</button>
+        {% else %}
+    {% endif %}
     </form>
 {% endblock %}
