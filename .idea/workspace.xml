@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="43b19ba6-b975-42f2-a50a-64f51130eead" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/47142459-apple-logo-wallpaper.jpg" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/templates/account/avatar_deleted.html" afterPath="$PROJECT_DIR$/account/templates/account/avatar_deleted.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/templates/account/upload.html" afterPath="$PROJECT_DIR$/account/templates/account/upload.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/views.py" afterPath="$PROJECT_DIR$/account/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
     </list>
     <ignored path="photoshare.iws" />
@@ -57,7 +54,7 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/account/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="387">
+            <state relative-caret-position="672">
               <caret line="72" column="85" selection-start-line="72" selection-start-column="85" selection-end-line="72" selection-end-column="85" />
               <folding>
                 <element signature="e#0#64#0" expanded="true" />
@@ -66,7 +63,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="avatar_deleted.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="avatar_deleted.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/account/templates/account/avatar_deleted.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="45">
@@ -76,11 +73,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="upload.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="upload.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/account/templates/account/upload.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="23" column="17" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
+            <state relative-caret-position="318">
+              <caret line="23" column="70" selection-start-line="23" selection-start-column="70" selection-end-line="23" selection-end-column="70" />
               <folding />
             </state>
           </provider>
@@ -151,9 +148,9 @@
         <option value="$PROJECT_DIR$/account/static/account/style.css" />
         <option value="$PROJECT_DIR$/account/forms.py" />
         <option value="$PROJECT_DIR$/account/urls.py" />
-        <option value="$PROJECT_DIR$/account/templates/account/upload.html" />
         <option value="$PROJECT_DIR$/account/views.py" />
         <option value="$PROJECT_DIR$/account/templates/account/avatar_deleted.html" />
+        <option value="$PROJECT_DIR$/account/templates/account/upload.html" />
       </list>
     </option>
   </component>
@@ -1112,17 +1109,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/account/templates/account/upload.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="17" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/account/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="387">
+        <state relative-caret-position="672">
           <caret line="72" column="85" selection-start-line="72" selection-start-column="85" selection-end-line="72" selection-end-column="85" />
           <folding>
             <element signature="e#0#64#0" expanded="true" />
@@ -1134,6 +1123,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" column="10" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/account/templates/account/upload.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="23" column="70" selection-start-line="23" selection-start-column="70" selection-end-line="23" selection-end-column="70" />
           <folding />
         </state>
       </provider>

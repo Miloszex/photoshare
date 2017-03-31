@@ -13,7 +13,6 @@
             {% endfor %}
             {% else %}
                 {% for field in form %}
-                        <b><u>Current: {{ avatar }}</u></b> <br>
                         {{ field.label_tag }} {{ field }}
                 {% endfor %}
         {% endif %}
@@ -22,6 +21,7 @@
 
     <form action="{% url 'delete_avatar' %} " method="post">
     {% csrf_token %}
+        <img src="/media/{{ request.user.profile.avatar }}" id="avatar">
     <button type="submit" class="btn-danger">Delete!</button>
     </form>
 {% endblock %}
