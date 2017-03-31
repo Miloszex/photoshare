@@ -70,4 +70,4 @@ def delete_avatar(request):
     user = get_object_or_404(User, username = request.user)
     user.profile.avatar.delete()
 
-    return render(request, 'account/avatar_deleted.html')
+    return render(request, 'account/avatar_deleted.html',{'message': 'Avatar Deleted!'})
