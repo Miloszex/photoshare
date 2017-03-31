@@ -11,12 +11,14 @@
                     {{ field.label_tag }} {{ field }}
                 {% endwith %}
             {% endfor %}
+             <input type="submit" class="btn btn-primary" disabled value="Register">
             {% else %}
                 {% for field in form %}
                         {{ field.label_tag }} {{ field }}
                 {% endfor %}
+            <input type="submit" class="btn btn-primary" value="Register">
         {% endif %}
-    <input type="submit" class="btn btn-primary" value="Register">
+
     </form>
 
     <form action="{% url 'delete_avatar' %} " method="post">
