@@ -1,9 +1,10 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .forms import UserRegistrationForm, UserLoginForm, ProfileForm
 from .models import Profile
 from django.contrib.auth import authenticate, logout
 from django.contrib.auth import login as auth_login
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
 
 def index(request):
 
@@ -64,3 +65,9 @@ def logout_user(request):
     logout(request)
     return render(request, 'account/logout.html', {'message': 'You have been logged out successfully!'})
 
+def delete_avatar(request):
+
+    user = get_object_or_404(User, username = request.user)
+    user.profile.avatar.delete()
+
+    return render(request, 'account/avatar_deleted.html')

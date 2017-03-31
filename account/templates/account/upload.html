@@ -11,6 +11,11 @@
                     {{ field.label_tag }} {{ field }}
                 {% endwith %}
             {% endfor %}
+            {% else %}
+                {% for field in form %}
+                        <b><u>Current: {{ avatar }}</u></b> <br>
+                        {{ field.label_tag }} {{ field }}
+                {% endfor %}
         {% endif %}
     <input type="submit" class="btn btn-primary" value="Register">
     </form>
