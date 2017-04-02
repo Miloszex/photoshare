@@ -23,4 +23,5 @@ urlpatterns = [
     url(r'profile/', views.profile, name='profile'),
     url(r'delete_avatar/', views.delete_avatar, name='delete_avatar'),
     url(r'logout/', views.logout_user, name='logout'),
+    url(r'my_photos/', views.showMyPhotos , name='show_my_photos'),
 ]

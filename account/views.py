@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .forms import UserRegistrationForm, UserLoginForm, ProfileForm
 from .models import Profile
+from board.models import Image
 from django.contrib.auth import authenticate, logout
 from django.contrib.auth import login as auth_login
 from django.contrib.auth.decorators import login_required
@@ -71,3 +72,9 @@ def delete_avatar(request):
     user.profile.avatar.delete()
 
     return render(request, 'account/avatar_deleted.html',{'message': 'Avatar Deleted!'})
+
+def showMyPhotos(request):
+
+    my_photos = Image.objects.all().filter(user=request.user.id)
+
+    return render(request, 'account/my_photos.html',{'my_photos': my_photos})

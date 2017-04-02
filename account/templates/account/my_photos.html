@@ -1,0 +1,5 @@
+{% for photo in my_photos %}
+    <img src="/media/{{ photo.image }}"> <br>
+    Description: {{ photo.description }}
+    Likes: {{ photo.likes }}
+{% endfor %}
