@@ -7,6 +7,8 @@ def post_image(request):
     if request.method == 'POST':
         form = PostForm(request.POST, request.FILES)
         if form.is_valid():
+            form.save(commit=False)
+            form.instance.user = request.user
             form.save()
             return render(request, 'board/upload_success.html', {'message':'Success!'})
     else:
