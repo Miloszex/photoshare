@@ -1,5 +1,15 @@
+{% extends 'base.html' %}
+
+{% block pageContent %}
 {% for photo in my_photos %}
-    <img src="/media/{{ photo.image }}"> <br>
-    Description: {{ photo.description }}
+    <div id="single_photo">
+    <img src="/media/{{ photo.image }}" width="800px"> <br>
+    Description: {{ photo.description }} <br>
     Likes: {{ photo.likes }}
+    Reports: {{ photo.reports }} <br>
+    <button type="submit" class="btn-success">Like!</button>
+    <button type="submit" class="btn-danger">Report!</button>
+    <br><br>
+    </div>
 {% endfor %}
+{% endblock %}
