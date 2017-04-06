@@ -71,10 +71,4 @@ def delete_avatar(request):
     user = get_object_or_404(User, username=request.user)
     user.profile.avatar.delete()
 
-    return render(request, 'account/avatar_deleted.html',{'message': 'Avatar Deleted!'})
-
-def showMyPhotos(request):
-
-    my_photos = Image.objects.all().filter(user=request.user.id)
-
-    return render(request, 'account/my_photos.html',{'my_photos': my_photos})
+    return render(request, 'board/avatar_deleted.html',{'message': 'Avatar Deleted!'})

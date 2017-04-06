@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .forms import PostForm
+from models import Image
 # Create your views here.
 
 def post_image(request):
@@ -15,3 +16,9 @@ def post_image(request):
         form = PostForm()
 
     return render(request, 'board/post_image.html',{'form':form})
+
+def showMyPhotos(request):
+
+    my_photos = Image.objects.all().filter(user=request.user.id)
+
+    return render(request, 'board/my_photos.html', {'my_photos': my_photos})
