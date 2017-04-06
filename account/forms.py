@@ -1,6 +1,6 @@
 from django.contrib.auth.models import User
 from django import forms
-from .models import Profile
+from .models import Profile, Observation
 from django.core import validators
 from django.forms import ModelForm
 import os
@@ -32,3 +32,10 @@ class UserLoginForm(forms.Form):
 
     username = forms.CharField(min_length=1)
     password = forms.CharField(widget=forms.PasswordInput, min_length=1)
+
+class ObservationForm(forms.ModelForm):
+    search_user = forms.CharField(min_length=3)
+
+    class Meta:
+        model = Observation
+        fields = []

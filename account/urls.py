@@ -23,4 +23,6 @@ urlpatterns = [
     url(r'profile/', views.profile, name='profile'),
     url(r'delete_avatar/', views.delete_avatar, name='delete_avatar'),
     url(r'logout/', views.logout_user, name='logout'),
+    url(r'search_for_user/', views.search_for_user, name='search_for_user'),
+   # url(r'add/(?P<username>[A-Z a-z]+)/', views.add_user, name='add_user')
 ]

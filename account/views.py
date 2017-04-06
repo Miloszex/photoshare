@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .forms import UserRegistrationForm, UserLoginForm, ProfileForm
+from .forms import UserRegistrationForm, UserLoginForm, ProfileForm, ObservationForm
 from .models import Profile
 from board.models import Image
 from django.contrib.auth import authenticate, logout
@@ -66,9 +66,27 @@ def logout_user(request):
     logout(request)
     return render(request, 'account/logout.html', {'message': 'You have been logged out successfully!'})
 
+
 def delete_avatar(request):
 
     user = get_object_or_404(User, username=request.user)
     user.profile.avatar.delete()
 
     return render(request, 'account/avatar_deleted.html',{'message': 'Avatar Deleted!'})
+
+def search_for_user(request):
+
+    if request.method == 'POST':
+        form = ObservationForm(request.POST)
+        searched_user = request.POST['search_user']
+        query = get_object_or_404(User, username=searched_user)
+        if form.is_valid():
+            form.save(commit=False)
+            form.instance.subject = request.user
+            form.instance.target = query
+            form.save()
+            return render(request,'account/user_added.html',{'message': 'user added!'})
+    else:
+        form = ObservationForm()
+
+    return render(request, 'account/search_user.html', {'form': form})
