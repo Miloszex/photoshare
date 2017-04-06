@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block pageContent %}
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8">
+            {% for image in all_images %}
+                <img src="/media/{{ image.image }}" width="800px"><br> <br>
+            {% endfor %}
+        </div>
+        <div class="col-sm-2"></div>
+    </div>
+{% endblock %}

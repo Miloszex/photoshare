@@ -3,6 +3,12 @@ from .forms import PostForm
 from models import Image
 # Create your views here.
 
+def index(request):
+
+    all_images = Image.objects.all()
+    return render(request, 'board/index.html',{'all_images': all_images})
+
+
 def post_image(request):
 
     if request.method == 'POST':
