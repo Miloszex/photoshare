@@ -33,3 +33,10 @@ body{
 #single_photo{
     text-align: center;
 }
+
+#above_image_user_section{
+    background: rgba(0, 0, 0, 0.5);
+    border: 20px;
+    width: 800px;
+    color: lime;
+}

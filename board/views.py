@@ -1,12 +1,22 @@
 from django.shortcuts import render
 from .forms import PostForm
-from models import Image
+from .models import Image
+from account.models import Observation
+from django.contrib.auth.models import User
 # Create your views here.
 
 def index(request):
 
-    all_images = Image.objects.all()
-    return render(request, 'board/index.html',{'all_images': all_images})
+    all_users = User.objects.all()
+    observed_users = []
+
+    for object in all_users:
+        if Observation.objects.all().filter(subject=request.user , target=object).exists():
+            observed_users.append(object)
+        else:
+            pass
+
+    return render(request, 'board/index.html', {'observed_users': observed_users})
 
 
 def post_image(request):
